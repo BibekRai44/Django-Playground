@@ -3,7 +3,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return render(request,'employee/index.html')
+    return render(request,'base.html')
 
 def employee(request):
-    return HttpResponse("This is the employee page")
+    return render(request,'employee/employee.html')
+
+

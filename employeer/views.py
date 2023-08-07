@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def employeer(request):
-    return HttpResponse("this is employeer page")
+    return render(request,'employeer/employeer.html')

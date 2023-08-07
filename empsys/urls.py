@@ -17,11 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
-from employee.views import employee
+from employee.views import employee,index
 from employeer.views import employeer
 
-def index(request):
-    return HttpResponse("This is the index page")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),

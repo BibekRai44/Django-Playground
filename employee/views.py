@@ -6,6 +6,19 @@ def index(request):
     return render(request,'base.html')
 
 def employee(request):
-    return render(request,'employee/employee.html')
+    if request.method=='POST':
+        data=request.POST
+        email=data.get('email')
+        password=data.get('password')
+        context={
+           'email':email,
+           'password':password
+       }
+    else:
+        context={
+            'name':'Bibek Rai',
+            'address':'Biratnagar'
+        }
+    return render(request,'employee/employee.html',context)
 
 

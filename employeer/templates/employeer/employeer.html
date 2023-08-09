@@ -3,10 +3,14 @@
 
 {% block main %}
 <div class="container">
+  
     <form>
         <div class="form-group" action="/employee" method="POSTT">
             {% csrf_token %}
-          <label for="exampleInputEmail1">Email address</label>
+            {{form}}
+            <button type="submit">Submit</button>
+          <!--
+            <label for="exampleInputEmail1">Email address</label>
           <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
           
         </div>
@@ -21,6 +25,7 @@
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+         -->
       </form>
 </div>
 {% endblock %}

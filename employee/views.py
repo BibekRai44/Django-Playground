@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import EmployeeForm
 # Create your views here.
 
 def index(request):
@@ -7,17 +8,19 @@ def index(request):
 
 def employee(request):
     if request.method=='POST':
-        data=request.POST
-        email=data.get('email')
-        password=data.get('password')
-        context={
-           'email':email,
-           'password':password
-       }
+        # data=request.POST
+        # email=data['email']
+        # name=data['name']
+        # context={
+        #    'name':name,
+        #    'email':email 
+        # }
+        pass
     else:
+        form=EmployeeForm()
         context={
-            'name':'Bibek Rai',
-            'address':'Biratnagar'
+            'form':form
+            
         }
     return render(request,'employee/employee.html',context)
 
